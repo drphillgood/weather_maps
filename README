@@ -1,7 +1,7 @@
 
 #### README FILE FOR GATHERING THE NECESSARY DATA AND CREATING MAPS ####
 
-## CREATING NCEP ANALYSIS OF PRECIPITATION ##
+## CREATE NCEP ANALYSIS OF PRECIPITATION ##
   DATABASE URL - https://psl.noaa.gov/data/composites/day/
     SELECT THE FOLLOWING
       Variables - Precipitation Rate
@@ -12,5 +12,31 @@
     ACTIONS
     - Create plot
     - (On next page) Download "Get a copy of the netCDF data file used for the plot"
+    - Rename file to "precip_analysis.nc"
+    - Move file to github/data/
+  JUYPTER NOTEBOOK
+    RUN github/scripts/precip-analysis.ipynb
+      BLOCK 7 - Replace 'f_path = r'../data/precip_analysis.nc' with file location
+      Run script
 
-    
+## CREATE ECMWF PRECIPITATION FORECAST ##
+  CREATE DB ACCOUNT
+    URL - https://cds.climate.copernicus.eu/#!/home
+    DATA FORM - https://cds.climate.copernicus.eu/cdsapp#!/dataset/seasonal-postprocessed-single-levels?tab=form
+      SELECT THE FOLLOWING
+        Originating centre - ECMWF
+        System - 5
+        Variable - Total precipitation anomalous rate of accumulation
+        Ensemble - Ensemble mean
+        Year - (2020)
+        Month - (June)
+        Leadtime Month - 3
+      ACTIONS
+      - Show API request
+      - Copy code
+        replace "format: 'grib,'" with 'format': 'netcdf'
+        replace 'download.grib' with 'filename.nc'
+      JUYPTER NOTEBOOK
+        RUN github/scripts/ecmwf-precip-forecastv1.ipynb
+          BLOCK 7 - Replace 'f_path = r'../data/precip_analysis.nc' with file location
+          Run script
