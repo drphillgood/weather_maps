@@ -40,3 +40,9 @@
         RUN github/scripts/ecmwf-precip-forecastv1.ipynb
           BLOCK 7 - Replace 'f_path = r'../data/precip_analysis.nc' with file location
           Run script
+
+##  DOWNGRADES ##
+  Plotly
+    version - 2.1
+  Pandas
+    version - 0.25
