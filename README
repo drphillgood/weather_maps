@@ -1,0 +1,16 @@
+
+#### README FILE FOR GATHERING THE NECESSARY DATA AND CREATING MAPS ####
+
+## CREATING NCEP ANALYSIS OF PRECIPITATION ##
+  DATABASE URL - https://psl.noaa.gov/data/composites/day/
+    SELECT THE FOLLOWING
+      Variables - Precipitation Rate
+      Analysis level - surface
+      Date (OR) - Ex. Select June 01 - June 09 2020
+      Plot type - anomaly
+      Region of globe - ALL
+    ACTIONS
+    - Create plot
+    - (On next page) Download "Get a copy of the netCDF data file used for the plot"
+
+    
